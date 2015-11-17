@@ -1,0 +1,23 @@
+doctype html
+html.
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"> </script>
+    <script src="/javascripts/app.js"> </script>    
+    </head>
+    <body ng-app="app" ng-controller="mainViewController">
+        <div ng-show="isUserNull()">
+        <input ng-model="name" ng-enter="setUser($name)">
+        </input>
+        </div>
+        <div ng-hide="isUserNull()">
+            <div>
+                <button ng-click="startRecord()"> {{state}} </button>
+                <button ng-click="rec()"> start </button>
+                <button ng-click="stop()"> stop </button>
+                This is recorder
+                <video id="source" style="width: 300px; height: 250px;" autoplay controls> </video>
+                <video id="dest" style="width: 300px; height: 250px;" autoplay controls> </video>
+            </div>
+        </div>
+    </body>
