@@ -1,0 +1,21 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+	<script src="/javascripts/seqCtrl.js"> </script>
+</head>
+<body ng-app="app" ng-controller="seqCtrl" ng-init="init()">
+	
+<button ng-click=addTrack()> addTrack </button>
+
+<table>
+  <tr ng-repeat="x in tracks track by $index">
+    <td style="width: 400px; height: 50px;">
+		<!--div style="width: 50px; height: 50px; border: solid; z-index:1"-->
+			<div ng-mousedown="onmousedown($event)" class="sample" id="{{'div' + $index}}" style="draggable: true; position: absolute; left: 0; width: 50px; height: 50px; background-color: #AA11BB;z-index:99;"> </div>
+		<!--/div-->
+	</td>
+  </tr>
+</table>
+
+</body>
+</html>

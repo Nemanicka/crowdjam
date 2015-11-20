@@ -3,6 +3,7 @@ var mainModule = angular.module('app', []);
 
 mainModule.controller('mainViewController', ['$scope', function ($scope) {
 
+    $scope.frameUrl = "sequencer.html"
     function hasGetUserMedia() {
      // Note: Opera builds are unprefixed.
     return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
@@ -19,6 +20,7 @@ mainModule.controller('mainViewController', ['$scope', function ($scope) {
     $scope.recording = false;
     $scope.isUserNull = function()
     {
+        console.log("isUserNull = ", $scope.user === null);
         return ($scope.user === null);
     }
     $scope.setUser = function(name)
