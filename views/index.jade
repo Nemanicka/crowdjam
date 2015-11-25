@@ -8,6 +8,7 @@ block content
             button(ng-click="startRecord()") {{state}}
             button(ng-click="rec()") start
             button(ng-click="stop()") stop
+            button(ng-click="metronomeStart()") metronome
             video(id="source" style="width: 300px; height: 250px;" autoplay controls)
             video(id="dest" style="width: 300px; height: 250px;" autoplay controls)
             iframe(ng-src="{{frameUrl}}" style="width: 900px; height: 300px;")
